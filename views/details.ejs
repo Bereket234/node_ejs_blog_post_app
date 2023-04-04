@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head')%>
+<body>
+    <%- include('./partials/header')%>
+    <main>
+        <div class="detail_container">
+            <div class="text_container">
+                <h3>
+                    <%= blog.title%>
+                </h3>
+                <p>
+                    <%= blog.description%>
+                </p>
+            </div>
+            <div class="del-btn-container">
+                <div class="del-btn-container">
+                    <i class="fa fa-solid fa-trash del-icon" data-doc="<%= blog._id %>" style="font-size: 1.5em;"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include('./partials/footer')%>
+    <script>
+        const button= document.querySelector('.del-icon')
+        button.addEventListener('click', () => {
+            console.log()
+            fetch(`/blogs/${button.dataset.doc}`,{method: 'delete' })
+                .then(()=> window.location= '/')
+                .catch(err=> console.log(err))
+        })
+    </script>
+</body>
+
+</html>
