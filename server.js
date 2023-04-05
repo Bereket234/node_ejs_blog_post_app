@@ -5,8 +5,8 @@ const blogs= require('./routes/blogs')
 
 
 const app= express()
-// mongodb+srv://bereketnigussie9:<password>@cluster0.sjqmzkb.mongodb.net/?retryWrites=true&w=majority
-mongoose.connect('mongodb+srv://bereketnigussie9:F6y2xxMcoo8MceI0@cluster0.sjqmzkb.mongodb.net/?retryWrites=true&w=majority')
+// mongodb+srv://<name>:<password>@cluster0.sjqmzkb.mongodb.net/?retryWrites=true&w=majority
+mongoose.connect('mongoDB-URI')
 .then(() => console.log('connected'))
 .catch(err => console.log(err)) 
 
